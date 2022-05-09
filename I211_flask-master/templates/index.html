@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<img src="{{url_for('static', filename = 'images/motbug.jpg')}}" alt = "mot"></img>
+<div>
+    <label for="name">Name this bug! (4 to 8 characters):</label>
+    <input type="text" id="name" name="name" required minlength ="4" maxlength="8" size = "10">
+    <label for="cute">Is this bug cute? Type 'yes' or 'no':</label>
+    <input type="text" id="cute" name="cute" required minlength ="2" maxlength="3" size = "5">
+    <label for="emailer">Enter your email for our mailer:</label>
+    <input type="email" id="emailer" name="emailer" size = "20">
+</div>
+{% endblock %}

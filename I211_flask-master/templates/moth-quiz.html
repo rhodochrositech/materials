@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+{% block title%}Moth Quiz{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class='display-1'>Moth Quiz!</h1>
+    <form  method="POST" name="add_moth">
+        <div>
+            <legend>Dinosaur fossils have been found on all seven continents. On which continent have the most dinosaur fossils been found?<br></legend>
+            <select id='continents' name='continents'>
+                <option>Africa</option>
+                <option>Antarctica</option>
+                <option>Asia</option>
+                <option>Australia</option>
+                <option>Europe</option>
+                <option>North America</option>
+                <option>South America</option>
+            </select>
+        </div>
+        <div>
+            <fieldset>
+                <legend>All dinosaurs hatched from eggs. True or False?</legend>
+                <ul>
+                    <li>
+                        <input type='radio' id='true' name='eggs' value='true'>
+                        <label for='true'>True</label>
+                    </li>
+                    <li>
+                        <input type='radio' id='false' name='eggs' value='false'>
+                        <label for='false'>False</label>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Which of these dinosaurs are herbivores?</legend>
+            <ul>
+                <li>
+                    <input type='checkbox' id='stegosaurus' name='herbivores' value="stegosaurus">
+                    <label for='stegosaurus'>stegosaurus</label>
+                </li>
+                <li>
+                    <input type='checkbox' id='allosaurus' name='herbivores' value="allosaurus">
+                    <label for='allosaurus'>allosaurus</label>
+                </li>
+                <li>
+                    <input type='checkbox' id='triceratops' name='herbivores' value="triceratops">
+                    <label for='triceratops'>triceratops</label>
+                </li>
+                <li>
+                    <input type='checkbox' id='velociraptor' name='herbivores' value="velociraptor">
+                    <label for='velociraptor'>velociraptor</label>
+                </li>
+            </ul>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Dinosaurs went extinct:</legend>
+                <input type='text' id='extinct' name='extinct'>
+                <label for='extinct'>millions of years ago</label>
+            </fieldset>
+        </div>
+        <div>
+            <button type="submit" value="Submit">Submit</button>
+            <button type="reset" value="Reset">Reset</button>
+        </div>
+        
+    </form>
+</div>
+{% endblock %}
