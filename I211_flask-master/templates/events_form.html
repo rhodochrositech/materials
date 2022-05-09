@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %} <!-- Empty Form Generation. Allows form to take info for new dict object-->
+<form method='POST' name='add_event'>
+  <div class='row'>
+      <label for="slug"><h2>Event Name</h2></label>
+      <input type="text" id="event_name" name="event_name">
+  </div>
+  <div class='row'>
+      <label for="slug"><h2>Event Date</h2></label>
+      <input type="date" id="event_date" name="event_date">
+  </div>
+  <div class='row'>
+      <label for="slug"><h2>Host</h2></label>
+      <input type="email" id="event_host" name="event_host">
+  </div>
+  <div class='row'>
+      <label for="slug"><h2>Description</h2></label>
+      <textarea id="description" name="description"></textarea>
+  </div>
+  <button type="submit" value="Submit">Submit</button>
+  <button type="reset" value="Reset">Reset</button>
+</form>
+
+
+
+{% endblock %}

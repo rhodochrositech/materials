@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="static/images/calendar.png" alt="">
+    <h1 class="display-5 fw-bold">Confirm Delete?</h1>
+    <div class="col-lg-6 mx-auto">
+      <h2 class="display-8 fw-bold"></h1>
+        <div class='row'>
+          <div class = 'col'> <!-- Cycles through each piece and presents the information -->
+              <h1>{{event["event_name"]}}</h1>
+              <div class= 'row'>
+                  <div class = 'col'>
+                      <h2>Date:</h2>
+                  </div>
+                  <div class = 'col'>
+                      <h2>{{event["event_date"]}}</h2>  
+                  </div>
+              </div>
+              <div class= 'row'>
+                  <div class = 'col'>
+                      <h2>Host:</h2>
+                  </div>
+                  <div class = 'col'>
+                      <h2>{{event["event_host"]}}</h2>
+                  </div>
+              </div>
+              <br>
+              <br>
+              <div class= 'row'>
+                  <div class = 'col'>
+                      <h2>Description:</h2>
+                  </div>
+                  <div class = 'col'>
+                      <h2>{{event["description"]}}</h2>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <form method='POST' name='add_event'>
+          <button type="submit" class="btn btn-primary btn-lg px-4 gap-3" value='Submit'>Delete</button> <!-- TRIGGERS SENT FORM, APP.PY HANDLES-->
+        </form>
+        <a href = "{{url_for('events')}}"><button class="btn btn-secondary btn-lg px-4 gap-3">Go Back</button></a> <!-- Just a url back button-->
+      </div>
+    </div>
+  </div>
+{% endblock %}

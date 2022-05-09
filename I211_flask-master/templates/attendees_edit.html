@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form method='POST' name='add_attendee'>
+    <div class='row'>
+        <label for="slug"><h2>Name</h2></label>
+        <input type="text" id="name" name="name" value = "{{attendee['name']}}">
+    </div>
+    <div class='row'>
+        <label for="slug"><h2>Email</h2></label>
+        <input type="email" id="email" name="email" value = "{{attendee['email']}}">
+    </div>
+    <div class='row'>
+        <label for="slug"><h2>Comments</h2></label>
+        <textarea id="comment" name="comment">{{attendee['comments']}}</textarea>
+    </div>
+    <button type="submit" value="Submit">Submit</button>
+    <button type="reset" value="Reset">Reset</button>
+</form>
+
+
+{% endblock %}

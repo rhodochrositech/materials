@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+{% block title %}Event{% endblock %}
+{% block content %}
+<h2>Events</h2>
+<div class='row'>
+    <div class = 'col'> <!-- Cycles through each piece and presents the information -->
+        <h1>{{events["event_name"]}}</h1>
+        <div class= 'row'>
+            <div class = 'col'>
+                <h2>Date:</h2>
+            </div>
+            <div class = 'col'>
+                <h2>{{events["event_date"]}}</h2>  
+            </div>
+        </div>
+        <div class= 'row'>
+            <div class = 'col'>
+                <h2>Host:</h2>
+            </div>
+            <div class = 'col'>
+                <h2>{{events["event_host"]}}</h2>
+            </div>
+        </div>
+        <div class= 'row'>
+            <div class = 'col'>
+                <h2>Description:</h2>
+            </div>
+            <div class = 'col'>
+                <h2>{{events["description"]}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class = row>
+        <div class = col>
+            <h1>
+                Attendees
+            </h1>
+        </div>
+        <div class='row'>
+            <div class = col>
+                <h2>Name</h2>
+            </div>
+            <div class = col>
+                <h2>Email</h2>
+            </div>
+            <div class = col>
+                <h2>Comments</h2>
+            </div>
+        </div>
+        
+        {% for attendee in attendees %}
+        <div class = row>
+            <div class = col-3>
+                <h3>{{attendee['name']}}</h3>
+            </div>
+            <div class = col-4>
+                <h3>{{attendee['email']}}</h3>
+            </div>
+            <div class = col-3>
+                <h4>{{attendee['comments'][:25]}}</h>
+            </div>
+            <div class=col-1>
+                <a href = "{{url_for('edit_attendee',event_ID = events['e_id'],attendee_ID = attendee['a_id'])}}"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Edit</button></a> <!-- Genterates event_ID ADD ATTENDEE page -->
+            </div>
+            <div class=col-1>
+                <a href = "{{url_for('delete_attendee',event_ID = events['e_id'],attendee_ID = attendee['a_id'])}}"><button type="button" class="btn btn-secondary btn-lg px-4 gap-3">Delete</button></a> <!-- Genterates event_ID ADD ATTENDEE page -->
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+<form method='POST' name='add_dino'>
+
+
+</form>
+<div class='row'>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href = "{{url_for('add_attendee',event_ID = events['e_id'])}}"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Add Attendee?</button></a> <!-- Genterates event_ID ADD ATTENDEE page -->
+        <a href = "{{url_for('edit',event_ID = events['e_id'])}}"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Edit Event</button></a> <!-- Generates event_ID URL-->
+        <a href = "{{url_for('delete',event_ID = events['e_id'])}}"><button type="button" class="btn btn-secondary btn-lg px-4 gap-3">Delete this event?</button></a> <!-- Genterates event_ID DELETE page -->
+    </div>
+</div>
+{% endblock %}
