@@ -1,4 +1,7 @@
 Documentation and files provided upon request: natcburk@iu.edu
+Active and live running Crypto daytrading AI trained on data over years of crypto trading trends.
+Version nat
+
 
 #### FOR NAT ####
 
