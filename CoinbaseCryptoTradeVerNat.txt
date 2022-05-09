@@ -1,0 +1,40 @@
+Documentation and files provided upon request: natcburk@iu.edu
+
+#### FOR NAT ####
+
+
+##########################################
+#Inspiration
+#article -> https://medium.com/@ethanbond39/how-to-begin-algorithmic-trading-in-python-981edd51baa1
+#github -> https://github.com/ethanbond64/Algotrading_Medium
+#CoinBase API -> https://docs.pro.coinbase.com/#introduction
+#cbpro https://github.com/danpaquin/coinbasepro-python
+################################################################################
+                      ## Imports ###
+import numpy as np
+#import datetime as dt
+from datetime import datetime
+from dateutil.parser import parse
+import cbpro
+import time
+import pandas as pd
+import talib
+import ta
+from ta import add_all_ta_features
+from ta.utils import dropna
+from ta.volatility import BollingerBands
+#import talib.abstract as ta
+import requests, json, time, datetime
+
+
+print('======================================================')
+print('**** Warming Up CoinBase + TradingView Algo Nats V1.6 ****')
+print('======================================================')
+
+
+################################################################################
+                        ## API STUFF ###
+
+# CB Pro granted api credentials as strings
+
+....................
